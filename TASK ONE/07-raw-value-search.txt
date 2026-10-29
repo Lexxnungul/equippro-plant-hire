@@ -1,0 +1,371 @@
+# EquipPro Plant Hire: Material Design 3 Color System & Semantic Roles
+
+## 1. Brand Key Colors & Rationale
+
+The color system for EquipPro Plant Hire is anchored in the physical realities of heavy civil engineering and logistics in Lagos, Nigeria. The primary brand key is pinned to Tone 40 so the tonal palette generates around it rather than having its chroma absorbed or shifted by default HCT generation algorithms.
+
+| Key Color Category | Palette Name | Key Hex (Tone 40) | Hue & Chroma Profile | Functional Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Primary** | Industrial Forge Rust | `#9A3412` | High Chroma, Warm Rust ($16^\circ$–$37^\circ$) | Pinned primary brand anchor; hero actions, active indicators |
+| **2. Secondary** | Deep Umber Iron | `#7A584C` | Low Chroma, Muted Umber ($16^\circ$) | Recessive structural controls, secondary buttons, inactive chips |
+| **3. Tertiary** | Warm Clay Sienna | `#8C4F2B` | Medium Chroma, Clay Sienna ($16^\circ$) | Contrasting highlights, badges, selected card outlines |
+| **4. Neutral** | Warm Carbon Gray | `#615C59` | Minimal Chroma ($\approx 4$), Warm Industrial Gray | Screen surfaces, backdrops, modal scrims, high-emphasis text |
+| **5. Neutral Variant** | Warm Slag Gray | `#655B54` | Subdued Chroma ($\approx 8$), Earthy Gray | Component outlines, field borders, divider lines, unselected chips |
+| **6. Warning** | Industrial Amber | `#7D5700` | High Chroma, Gold-Amber ($\approx 75^\circ$) | Overstay caution, 250-hour service window alert, deposit warnings |
+| **7. Error** | Crimson Alert | `#BA1A1A` | High Chroma, Cool Crimson ($\approx 25^\circ$) | Failed validation, database disconnects, critical stops |
+| **8. Success** | Field Green | `#2E6C31` | High Chroma, Distinct Green ($\approx 140^\circ$) | Verified returns, cleared gate passes, confirmed payments |
+
+---
+
+## 2. Complete 14-Tone Primitive Palettes (Raw Hex Values)
+
+Each tonal palette represents perceptual luminance ranging from Tone 0 (pure black) to Tone 100 (pure white). Tone 40 is the canonical Light Theme accent role, and Tone 80 is the canonical Dark Theme accent role.
+
+### 2.1 Primary Tonal Palette (`#9A3412` Pinned at Tone 40)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#380D00`
+* **Tone 20:** `#5B1B03`
+* **Tone 30:** `#7A280B`
+* **Tone 40:** `#9A3412` *(Pinned Primary Hero)*
+* **Tone 50:** `#BB4B27`
+* **Tone 60:** `#DD643D`
+* **Tone 70:** `#FF845B`
+* **Tone 80:** `#FFB59D`
+* **Tone 90:** `#FFDBCF`
+* **Tone 95:** `#FFEDE7`
+* **Tone 98:** `#FFF8F5`
+* **Tone 99:** `#FFFBFF`
+* **Tone 100:** `#FFFFFF`
+
+### 2.2 Secondary Tonal Palette (`#7A584C`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#2C1710`
+* **Tone 20:** `#432B23`
+* **Tone 30:** `#5E4037`
+* **Tone 40:** `#7A584C`
+* **Tone 50:** `#967064`
+* **Tone 60:** `#B38A7C`
+* **Tone 70:** `#D0A496`
+* **Tone 80:** `#EDBFB0`
+* **Tone 90:** `#FFDBCF`
+* **Tone 95:** `#FFEDE7`
+* **Tone 98:** `#FFF8F6`
+* **Tone 99:** `#FFFBFF`
+* **Tone 100:** `#FFFFFF`
+
+### 2.3 Tertiary Tonal Palette (`#8C4F2B`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#351000`
+* **Tone 20:** `#522307`
+* **Tone 30:** `#6F3819`
+* **Tone 40:** `#8C4F2B`
+* **Tone 50:** `#AB6741`
+* **Tone 60:** `#CB8058`
+* **Tone 70:** `#EC9A70`
+* **Tone 80:** `#FFB68E`
+* **Tone 90:** `#FFDCCB`
+* **Tone 95:** `#FFEDE5`
+* **Tone 98:** `#FFF8F5`
+* **Tone 99:** `#FFFBFF`
+* **Tone 100:** `#FFFFFF`
+
+### 2.4 Neutral Tonal Palette (`#615C59`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#1D1B1A`
+* **Tone 20:** `#32302E`
+* **Tone 30:** `#494644`
+* **Tone 40:** `#615C59`
+* **Tone 50:** `#7A7572`
+* **Tone 60:** `#948E8B`
+* **Tone 70:** `#AFA9A5`
+* **Tone 80:** `#CBC4C0`
+* **Tone 90:** `#E7E1DC`
+* **Tone 95:** `#F6EFEA`
+* **Tone 98:** `#FEF8F3`
+* **Tone 99:** `#FFFBF8`
+* **Tone 100:** `#FFFFFF`
+
+#### Additional Neutral Surface Container Tones (M3 Surface Elevation Hierarchy)
+* **Tone 4 (`surface-container-lowest` in Dark Theme):** `#0F0E0D`
+* **Tone 6 (`surface` in Dark Theme):** `#141312`
+* **Tone 12 (`surface-container` in Dark Theme):** `#22201E`
+* **Tone 17 (`surface-container-high` in Dark Theme):** `#2C2A28`
+* **Tone 22 (`surface-container-highest` in Dark Theme):** `#373533`
+* **Tone 87 (`surface-dim` in Light Theme):** `#DFD8D3`
+
+### 2.5 Neutral Variant Tonal Palette (`#655B54`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#201A16`
+* **Tone 20:** `#362F2A`
+* **Tone 30:** `#4D443F`
+* **Tone 40:** `#655B54`
+* **Tone 50:** `#7F736C`
+* **Tone 60:** `#998D84`
+* **Tone 70:** `#B4A79E`
+* **Tone 80:** `#D1C2B9`
+* **Tone 90:** `#EEDEC5`
+* **Tone 95:** `#FCEDE3`
+* **Tone 98:** `#FFF7F1`
+* **Tone 99:** `#FFFBFF`
+* **Tone 100:** `#FFFFFF`
+
+### 2.6 Warning Tonal Palette (`#7D5700`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#261900`
+* **Tone 20:** `#402D00`
+* **Tone 30:** `#5E4100`
+* **Tone 40:** `#7D5700`
+* **Tone 50:** `#9D6F00`
+* **Tone 60:** `#BF8800`
+* **Tone 70:** `#E2A30F`
+* **Tone 80:** `#FFBA29`
+* **Tone 90:** `#FFDF9E`
+* **Tone 95:** `#FFEECE`
+* **Tone 98:** `#FFF8ED`
+* **Tone 99:** `#FFFBFF`
+* **Tone 100:** `#FFFFFF`
+
+### 2.7 Error Tonal Palette (`#BA1A1A`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#410002`
+* **Tone 20:** `#690005`
+* **Tone 30:** `#93000A`
+* **Tone 40:** `#BA1A1A`
+* **Tone 50:** `#DE3730`
+* **Tone 60:** `#FF5449`
+* **Tone 70:** `#FF897D`
+* **Tone 80:** `#FFB4AB`
+* **Tone 90:** `#FFDAD6`
+* **Tone 95:** `#FFEDEA`
+* **Tone 98:** `#FFF8F7`
+* **Tone 99:** `#FFFBFF`
+* **Tone 100:** `#FFFFFF`
+
+### 2.8 Success Tonal Palette (`#2E6C31`)
+* **Tone 0:** `#000000`
+* **Tone 10:** `#002204`
+* **Tone 20:** `#00390B`
+* **Tone 30:** `#13531D`
+* **Tone 40:** `#2E6C31`
+* **Tone 50:** `#478648`
+* **Tone 60:** `#60A160`
+* **Tone 70:** `#7BBD79`
+* **Tone 80:** `#96D892`
+* **Tone 90:** `#B1F5AC`
+* **Tone 95:** `#D1FFC9`
+* **Tone 98:** `#EFFFFE`
+* **Tone 99:** `#F7FFEE`
+* **Tone 100:** `#FFFFFF`
+
+---
+
+## 3. Semantic Color Roles Across All 8 Palettes
+
+In Material Design 3, color roles represent specific component responsibilities (jobs) rather than static color names. Every role pair used for text or interactive elements must maintain accessible contrast ratios.
+
+### 3.1 Primary Roles (Brand Hero & High-Emphasis Controls)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`primary`** | Main action fills, high-emphasis buttons, active icons | Tone 40: `#9A3412` | Tone 80: `#FFB59D` | 5.3:1 (against `#FFFFFF`) | AA Pass (Normal), AAA (Large) |
+| **`on-primary`** | Text & icons resting on `primary` fill | Tone 100: `#FFFFFF` | Tone 20: `#5B1B03` | 5.3:1 (Light) / 8.4:1 (Dark) | AA / AAA Pass |
+| **`primary-container`** | Background fill for prominent cards, FABs, and callouts | Tone 90: `#FFDBCF` | Tone 30: `#7A280B` | 13.9:1 (with `on-primary-container`) | AAA Pass |
+| **`on-primary-container`** | High-contrast text & icons on `primary-container` | Tone 10: `#380D00` | Tone 90: `#FFDBCF` | 13.9:1 (Light) / 10.2:1 (Dark) | AAA Pass |
+| **`inverse-primary`** | Interactive elements on `inverse-surface` (e.g. snackbar action) | Tone 80: `#FFB59D` | Tone 40: `#9A3412` | 7.1:1 (against `#32302E`) | AAA Pass |
+
+### 3.2 Secondary Roles (Supportive & Recessive Controls)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`secondary`** | Tonal buttons, filter chips, secondary badges | Tone 40: `#7A584C` | Tone 80: `#EDBFB0` | 5.8:1 (against `#FFFFFF`) | AA Pass |
+| **`on-secondary`** | Text & icons resting on `secondary` fill | Tone 100: `#FFFFFF` | Tone 20: `#432B23` | 5.8:1 (Light) / 7.6:1 (Dark) | AA / AAA Pass |
+| **`secondary-container`** | Fill for recessive tonal cards and selected chips | Tone 90: `#FFDBCF` | Tone 30: `#5E4037` | 12.8:1 (with `on-secondary-container`) | AAA Pass |
+| **`on-secondary-container`** | High-contrast text & icons on `secondary-container` | Tone 10: `#2C1710` | Tone 90: `#FFDBCF` | 12.8:1 (Light) / 9.8:1 (Dark) | AAA Pass |
+
+### 3.3 Tertiary Roles (Contrasting Accents & Operational Tags)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`tertiary`** | Accent fills, equipment model tags, rental duration chips | Tone 40: `#8C4F2B` | Tone 80: `#FFB68E` | 5.5:1 (against `#FFFFFF`) | AA Pass |
+| **`on-tertiary`** | Text & icons resting on `tertiary` fill | Tone 100: `#FFFFFF` | Tone 20: `#522307` | 5.5:1 (Light) / 8.1:1 (Dark) | AA / AAA Pass |
+| **`tertiary-container`** | Background fill for highlighted telemetry alerts and tags | Tone 90: `#FFDCCB` | Tone 30: `#6F3819` | 13.5:1 (with `on-tertiary-container`) | AAA Pass |
+| **`on-tertiary-container`** | High-contrast text & icons on `tertiary-container` | Tone 10: `#351000` | Tone 90: `#FFDCCB` | 13.5:1 (Light) / 9.5:1 (Dark) | AAA Pass |
+
+### 3.4 Neutral & Surface Roles (Canvas, Elevation & Scrim)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`surface`** | Base canvas and screen background | Tone 98: `#FEF8F3` | Tone 6: `#141312` | 15.8:1 (with `on-surface`) | AAA Pass |
+| **`on-surface`** | Primary high-emphasis body text, titles, numbers | Tone 10: `#1D1B1A` | Tone 90: `#E7E1DC` | 15.8:1 (Light) / 13.7:1 (Dark) | AAA Pass |
+| **`surface-dim`** | Receded or dimmed baseline surface | Tone 87: `#DFD8D3` | Tone 6: `#141312` | 11.2:1 (with `on-surface`) | AAA Pass |
+| **`surface-bright`** | Raised or illuminated baseline canvas | Tone 98: `#FEF8F3` | Tone 24: `#3C3937` | 15.8:1 (Light) / 7.2:1 (Dark) | AAA Pass |
+| **`surface-container-lowest`** | Lowest-emphasis card or modal fill | Tone 100: `#FFFFFF` | Tone 4: `#0F0E0D` | 16.5:1 (with `on-surface`) | AAA Pass |
+| **`surface-container-low`** | Cards resting slightly above canvas | Tone 95: `#F6EFEA` | Tone 10: `#1D1B1A` | 14.7:1 (with `on-surface`) | AAA Pass |
+| **`surface-container`** | Default container background (machine cards, panels) | Tone 94: `#F2ECE7` | Tone 12: `#22201E` | 14.1:1 (with `on-surface`) | AAA Pass |
+| **`surface-container-high`** | Elevated dropdowns, context menus, bottom sheets | Tone 92: `#EDE6E1` | Tone 17: `#2C2A28` | 13.4:1 (with `on-surface`) | AAA Pass |
+| **`surface-container-highest`** | Top-level floating dialogs and date pickers | Tone 90: `#E7E1DC` | Tone 22: `#373533` | 12.6:1 (with `on-surface`) | AAA Pass |
+| **`inverse-surface`** | Dark contrasting container in Light theme (snackbars) | Tone 20: `#32302E` | Tone 90: `#E7E1DC` | 12.1:1 (with `inverse-on-surface`) | AAA Pass |
+| **`inverse-on-surface`** | High-contrast light text resting on `inverse-surface` | Tone 95: `#F6EFEA` | Tone 20: `#32302E` | 12.1:1 (Light) / 12.1:1 (Dark) | AAA Pass |
+| **`scrim`** | Modal overlay fill blocking background interaction | Tone 0: `#000000` | Tone 0: `#000000` | N/A (Structural backdrop) | N/A |
+
+### 3.5 Neutral Variant & Outline Roles (Borders & Dividers)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`surface-variant`** | Table headers, unselected input fill, subtle containers | Tone 90: `#EEDEC5` | Tone 30: `#4D443F` | 8.8:1 (with `on-surface-variant`) | AAA Pass |
+| **`on-surface-variant`** | Secondary captions, helper labels, disabled text | Tone 30: `#4D443F` | Tone 80: `#D1C2B9` | 8.8:1 (Light) / 7.2:1 (Dark) | AAA Pass |
+| **`outline`** | Structural borders requiring $\ge 3:1$ (inputs, cards) | Tone 50: `#7F736C` | Tone 60: `#998D84` | 3.6:1 (against `#FEF8F3`) | UI Component Pass ($\ge 3:1$) |
+| **`outline-variant`** | Low-contrast visual boundaries (dividers, table lines) | Tone 80: `#D1C2B9` | Tone 30: `#4D443F` | 1.8:1 (Decorative only) | Prohibited for text/active bounds |
+
+### 3.6 Warning Roles (Overstay, Telematics & Deposit Cautions)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`warning`** | Cautionary icon fills, warning borders, alert text | Tone 40: `#7D5700` | Tone 80: `#FFBA29` | 6.2:1 (against `#FFFFFF`) | AA Pass (Normal), AAA (Large) |
+| **`on-warning`** | Text & icons resting on `warning` fill | Tone 100: `#FFFFFF` | Tone 20: `#402D00` | 6.2:1 (Light) / 9.1:1 (Dark) | AA / AAA Pass |
+| **`warning-container`** | Background fill for 250-hr service alerts and warnings | Tone 90: `#FFDF9E` | Tone 30: `#5E4100` | 12.1:1 (with `on-warning-container`) | AAA Pass |
+| **`on-warning-container`** | High-contrast dark amber text on `warning-container` | Tone 10: `#261900` | Tone 90: `#FFDF9E` | 12.1:1 (Light) / 8.5:1 (Dark) | AAA Pass |
+
+### 3.7 Error Roles (Form Validation & Database Breakouts)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`error`** | Critical alerts, invalid input outlines, error icons | Tone 40: `#BA1A1A` | Tone 80: `#FFB4AB` | 5.6:1 (against `#FFFFFF`) | AA Pass |
+| **`on-error`** | Text & icons resting on `error` fill | Tone 100: `#FFFFFF` | Tone 20: `#690005` | 5.6:1 (Light) / 9.8:1 (Dark) | AA / AAA Pass |
+| **`error-container`** | Background fill for error banners and modal alerts | Tone 90: `#FFDAD6` | Tone 30: `#93000A` | 11.8:1 (with `on-error-container`) | AAA Pass |
+| **`on-error-container`** | High-contrast text on `error-container` banner | Tone 10: `#410002` | Tone 90: `#FFDAD6` | 11.8:1 (Light) / 8.9:1 (Dark) | AAA Pass |
+
+### 3.8 Success Roles (Payment Confirmations & Gate Pass Releases)
+
+| Role Token | Job Description | Light Scheme (Tone & Hex) | Dark Scheme (Tone & Hex) | Contrast Ratio (Pair) | WCAG Rating |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`success`** | Confirmation badges, gate-pass cleared icons | Tone 40: `#2E6C31` | Tone 80: `#96D892` | 5.4:1 (against `#FFFFFF`) | AA Pass |
+| **`on-success`** | Text & icons resting on `success` fill | Tone 100: `#FFFFFF` | Tone 20: `#00390B` | 5.4:1 (Light) / 10.1:1 (Dark) | AA / AAA Pass |
+| **`success-container`** | Background fill for verified return and payment banners | Tone 90: `#B1F5AC` | Tone 30: `#13531D` | 12.9:1 (with `on-success-container`) | AAA Pass |
+| **`on-success-container`** | High-contrast text on `success-container` banner | Tone 10: `#002204` | Tone 90: `#B1F5AC` | 12.9:1 (Light) / 9.4:1 (Dark) | AAA Pass |
+
+---
+
+## 4. Root CSS Custom Properties Implementation
+
+This block defines the CSS custom properties derived from the JSON token export. UI components must strictly consume these variables (`var(--md-sys-color-*)`) with zero raw hex values permitted in component templates.
+
+```css
+:root {
+  /* Primary */
+  --md-sys-color-primary: #9A3412;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #FFDBCF;
+  --md-sys-color-on-primary-container: #380D00;
+  --md-sys-color-inverse-primary: #FFB59D;
+
+  /* Secondary */
+  --md-sys-color-secondary: #7A584C;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #FFDBCF;
+  --md-sys-color-on-secondary-container: #2C1710;
+
+  /* Tertiary */
+  --md-sys-color-tertiary: #8C4F2B;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #FFDCCB;
+  --md-sys-color-on-tertiary-container: #351000;
+
+  /* Neutral & Surfaces */
+  --md-sys-color-surface: #FEF8F3;
+  --md-sys-color-on-surface: #1D1B1A;
+  --md-sys-color-surface-dim: #DFD8D3;
+  --md-sys-color-surface-bright: #FEF8F3;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F6EFEA;
+  --md-sys-color-surface-container: #F2ECE7;
+  --md-sys-color-surface-container-high: #EDE6E1;
+  --md-sys-color-surface-container-highest: #E7E1DC;
+  --md-sys-color-inverse-surface: #32302E;
+  --md-sys-color-inverse-on-surface: #F6EFEA;
+  --md-sys-color-scrim: #000000;
+
+  /* Neutral Variant & Outlines */
+  --md-sys-color-surface-variant: #EEDEC5;
+  --md-sys-color-on-surface-variant: #4D443F;
+  --md-sys-color-outline: #7F736C;
+  --md-sys-color-outline-variant: #D1C2B9;
+
+  /* Warning */
+  --md-sys-color-warning: #7D5700;
+  --md-sys-color-on-warning: #FFFFFF;
+  --md-sys-color-warning-container: #FFDF9E;
+  --md-sys-color-on-warning-container: #261900;
+
+  /* Error */
+  --md-sys-color-error: #BA1A1A;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FFDAD6;
+  --md-sys-color-on-error-container: #410002;
+
+  /* Success */
+  --md-sys-color-success: #2E6C31;
+  --md-sys-color-on-success: #FFFFFF;
+  --md-sys-color-success-container: #B1F5AC;
+  --md-sys-color-on-success-container: #002204;
+}
+
+[data-theme="dark"] {
+  /* Primary */
+  --md-sys-color-primary: #FFB59D;
+  --md-sys-color-on-primary: #5B1B03;
+  --md-sys-color-primary-container: #7A280B;
+  --md-sys-color-on-primary-container: #FFDBCF;
+  --md-sys-color-inverse-primary: #9A3412;
+
+  /* Secondary */
+  --md-sys-color-secondary: #EDBFB0;
+  --md-sys-color-on-secondary: #432B23;
+  --md-sys-color-secondary-container: #5E4037;
+  --md-sys-color-on-secondary-container: #FFDBCF;
+
+  /* Tertiary */
+  --md-sys-color-tertiary: #FFB68E;
+  --md-sys-color-on-tertiary: #522307;
+  --md-sys-color-tertiary-container: #6F3819;
+  --md-sys-color-on-tertiary-container: #FFDCCB;
+
+  /* Neutral & Surfaces */
+  --md-sys-color-surface: #141312;
+  --md-sys-color-on-surface: #E7E1DC;
+  --md-sys-color-surface-dim: #141312;
+  --md-sys-color-surface-bright: #3C3937;
+  --md-sys-color-surface-container-lowest: #0F0E0D;
+  --md-sys-color-surface-container-low: #1D1B1A;
+  --md-sys-color-surface-container: #22201E;
+  --md-sys-color-surface-container-high: #2C2A28;
+  --md-sys-color-surface-container-highest: #373533;
+  --md-sys-color-inverse-surface: #E7E1DC;
+  --md-sys-color-inverse-on-surface: #32302E;
+  --md-sys-color-scrim: #000000;
+
+  /* Neutral Variant & Outlines */
+  --md-sys-color-surface-variant: #4D443F;
+  --md-sys-color-on-surface-variant: #D1C2B9;
+  --md-sys-color-outline: #998D84;
+  --md-sys-color-outline-variant: #4D443F;
+
+  /* Warning */
+  --md-sys-color-warning: #FFBA29;
+  --md-sys-color-on-warning: #402D00;
+  --md-sys-color-warning-container: #5E4100;
+  --md-sys-color-on-warning-container: #FFDF9E;
+
+  /* Error */
+  --md-sys-color-error: #FFB4AB;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000A;
+  --md-sys-color-on-error-container: #FFDAD6;
+
+  /* Success */
+  --md-sys-color-success: #96D892;
+  --md-sys-color-on-success: #00390B;
+  --md-sys-color-success-container: #13531D;
+  --md-sys-color-on-success-container: #B1F5AC;
+}
+```

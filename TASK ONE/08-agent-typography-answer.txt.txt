@@ -1,0 +1,3 @@
+08-agent-typography-answer.txt
+
+The active EquipPro design system implements the standard 15-role Material Design 3 typography hierarchy, all styled using the primary "DM Sans" typeface:

@@ -21,9 +21,12 @@ export default function RootLayout({
         style={{
           margin: 0,
           padding: 0,
+          height: '100vh',
+          width: '100vw',
+          overflow: 'hidden',
           backgroundColor: 'var(--color-surface)',
           color: 'var(--color-on-surface)',
-          fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          fontFamily: 'var(--font-body-large-family, "DM Sans", sans-serif)',
           WebkitFontSmoothing: 'antialiased',
         }}
       >
@@ -32,4 +35,3 @@ export default function RootLayout({
     </html>
   );
 }
-

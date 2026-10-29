@@ -1,0 +1,22 @@
+Trigger: Always-On
+Environment Instructions
+
+Read docs/prd.md before answering any architectural question.
+Reason: The Product Requirements Document is the single source of truth for business logic.
+
+Run type checks before declaring a task complete.
+Execute npm run build or npx tsc --noEmit to verify type safety.
+Reason: Broken types cause production build failures and runtime bugs.
+
+Do not run destructive shell commands.
+Never run rm -rf, prisma migrate reset, or git push --force.
+Reason: Destructive commands cause irreversible data loss in development and production environments.
+
+Output file changes as complete files or clear unified diffs.
+Do not leave comments like "insert remaining code here".
+Reason: Incomplete code blocks cause syntax errors when applied to the workspace.
+
+Check for semantic CSS variable use on every UI change.
+Search for raw hex codes in touched components.
+Reject code that contains raw hex values.
+Reason: The design system requires strict token usage across the application.

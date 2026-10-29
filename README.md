@@ -164,3 +164,4 @@ The UI strictly adheres to **Material Design 3 (M3)** tokens anchored to **Indus
 - [x] **Static Build Integrity:** Next.js production build completes with 0 errors (`npm run build`).
 - [x] **Dual-Ledger Separation:** Distinct physical isolation between `payments` and `payment_attempts`.
 - [x] **250-Hour Maintenance Gate:** Lockout trigger on engine runtime thresholds.
+

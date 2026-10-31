@@ -1,0 +1,158 @@
+// Prisma Schema for EquipPro Plant Hire
+// Single Source of Truth: docs/equippro_plant_hire_prd.md Section 5
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                    String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  company_name          String           @db.VarChar(100)
+  cac_number            String           @unique @db.VarChar(20)
+  email                 String           @unique @db.VarChar(255)
+  phone_number          String           @db.VarChar(20)
+  password_hash         String           @db.VarChar(255)
+  role                  String           @default("CONTRACTOR") @db.VarChar(20)
+  is_verified           Boolean          @default(false)
+  deletion_scheduled_at DateTime?        @db.Timestamptz(6)
+  anonymized_at         DateTime?        @db.Timestamptz(6)
+  created_at            DateTime         @default(now()) @db.Timestamptz(6)
+  updated_at            DateTime         @default(now()) @updatedAt @db.Timestamptz(6)
+
+  sessions              Session[]
+  bookings              Booking[]
+  payments              Payment[]
+  payment_attempts      PaymentAttempt[]
+
+  @@index([email], map: "idx_users_email")
+  @@index([cac_number], map: "idx_users_cac")
+  @@map("users")
+}
+
+model Session {
+  id                 String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id            String   @db.Uuid
+  session_token_hash String   @unique @db.VarChar(64)
+  ip_address         String   @db.VarChar(45)
+  user_agent         String   @db.Text
+  is_revoked         Boolean  @default(false)
+  expires_at         DateTime @db.Timestamptz(6)
+  created_at         DateTime @default(now()) @db.Timestamptz(6)
+
+  user               User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([session_token_hash], map: "idx_sessions_lookup")
+  @@map("sessions")
+}
+
+model Booking {
+  id               String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id          String           @db.Uuid
+  machine_id       String           @db.Uuid
+  start_date       DateTime         @db.Timestamptz(6)
+  end_date         DateTime         @db.Timestamptz(6)
+  status           String           @default("PENDING") @db.VarChar(30)
+  created_at       DateTime         @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime         @default(now()) @updatedAt @db.Timestamptz(6)
+
+  user             User             @relation(fields: [user_id], references: [id])
+  machine          Machine          @relation(fields: [machine_id], references: [id])
+  payments         Payment[]
+  payment_attempts PaymentAttempt[]
+
+  @@map("bookings")
+}
+
+model Payment {
+  id                    String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  booking_id            String   @db.Uuid
+  user_id               String   @db.Uuid
+  amount_in_kobo        BigInt
+  currency              String   @default("NGN") @db.VarChar(3)
+  ledger_type           String   @db.VarChar(30)
+  transaction_reference String   @unique @db.VarChar(100)
+  payment_rail          String   @db.VarChar(30)
+  settled_at            DateTime @db.Timestamptz(6)
+  created_at            DateTime @default(now()) @db.Timestamptz(6)
+
+  booking               Booking  @relation(fields: [booking_id], references: [id])
+  user                  User     @relation(fields: [user_id], references: [id])
+
+  @@index([booking_id], map: "idx_payments_booking")
+  @@index([user_id], map: "idx_payments_user")
+  @@index([transaction_reference], map: "idx_payments_ref")
+  @@map("payments")
+}
+
+model PaymentAttempt {
+  id                  String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id             String   @db.Uuid
+  booking_id          String?  @db.Uuid
+  amount_in_kobo      BigInt
+  payment_channel     String   @db.VarChar(50)
+  gateway_reference   String?  @db.VarChar(100)
+  failure_category    String   @db.VarChar(50)
+  error_code          String?  @db.VarChar(50)
+  raw_gateway_payload Json?
+  ip_address          String   @db.VarChar(45)
+  attempted_at        DateTime @default(now()) @db.Timestamptz(6)
+
+  user                User     @relation(fields: [user_id], references: [id])
+  booking             Booking? @relation(fields: [booking_id], references: [id])
+
+  @@index([user_id], map: "idx_attempts_user")
+  @@index([failure_category], map: "idx_attempts_category")
+  @@map("payment_attempts")
+}
+
+model Machine {
+  id                 String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  serial_number      String           @unique @db.VarChar(50)
+  plate_or_fleet_id  String           @unique @db.VarChar(30)
+  model_name         String           @db.VarChar(100)
+  category           String           @db.VarChar(30)
+  daily_rate_kobo    BigInt
+  deposit_rate_kobo  BigInt
+  operational_status String           @default("AVAILABLE") @db.VarChar(30)
+  total_hours_run    Decimal          @default(0.00) @db.Decimal(10, 2)
+  last_service_hours Decimal          @default(0.00) @db.Decimal(10, 2)
+  created_at         DateTime         @default(now()) @db.Timestamptz(6)
+  updated_at         DateTime         @default(now()) @updatedAt @db.Timestamptz(6)
+
+  bookings           Booking[]
+  maintenance_logs   MaintenanceLog[]
+
+  @@index([operational_status], map: "idx_machines_status")
+  @@index([category], map: "idx_machines_category")
+  @@map("machines")
+}
+
+model MaintenanceLog {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  machine_id       String   @db.Uuid
+  hours_at_service Decimal  @db.Decimal(10, 2)
+  technician_name  String   @db.VarChar(100)
+  parts_replaced   String   @db.Text
+  performed_at     DateTime @default(now()) @db.Timestamptz(6)
+
+  machine          Machine  @relation(fields: [machine_id], references: [id])
+
+  @@map("maintenance_logs")
+}
+
+model RetrievalChunk {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  document_title    String   @db.VarChar(150)
+  section_reference String   @db.VarChar(100)
+  chunk_content     String   @db.Text
+  metadata          Json     @default("{}")
+  created_at        DateTime @default(now()) @db.Timestamptz(6)
+
+  @@index([section_reference], map: "idx_retrieval_section")
+  @@map("retrieval_chunks")
+}
+

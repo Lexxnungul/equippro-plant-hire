@@ -147,7 +147,7 @@ function AuthContent() {
       <div
         style={{
           width: '100%',
-          maxWidth: '480px',
+          maxWidth: '500px',
           backgroundColor: 'var(--color-surface-container)',
           borderRadius: '0.75rem',
           border: '1px solid var(--color-outline)',
@@ -175,10 +175,11 @@ function AuthContent() {
           </Link>
           <h1
             style={{
-              fontSize: 'clamp(1.5rem, 3vw + 0.5rem, 2rem)',
+              fontSize: 'clamp(1.25rem, 2.2vw + 0.4rem, 1.625rem)',
               fontWeight: 800,
               margin: '0 0 0.5rem 0',
               color: 'var(--color-primary)',
+              whiteSpace: activeMode === 'login' ? 'nowrap' : 'normal',
             }}
           >
             {activeMode === 'login' && 'Contractor Portal Sign In'}
